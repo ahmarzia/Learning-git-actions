@@ -68,12 +68,3 @@ jobs:
         id: deployment
         uses: action/deploy-pages@v4
         
-
-
-
-
-
-        
-          node-version: '20.x'
-      - run: npm install
-      - run: npm test
