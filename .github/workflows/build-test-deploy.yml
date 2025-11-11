@@ -59,24 +59,23 @@ jobs:
         with:
           static_site_generator: next
       
-      - run: npm install
-      - run: npm test
-      
+
       - name: Build
-        run: |
-          # your build commands go here
-          # e.g. npm ci && npm run build
-          echo "placeholder build step"
+        run: | 
+              npm install 
+              npm run build
 
       - name: Ensure output directory exists
         run: mkdir -p ./out
 
       - name: Archive artifact
         run: tar -czf out.tar.gz ./out
+        
       - name: upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './out'
+          name: out
+          path: ./out
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
