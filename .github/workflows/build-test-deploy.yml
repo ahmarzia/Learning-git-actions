@@ -64,10 +64,9 @@ jobs:
               npm run build
         
       - name: upload artifacts
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: out
-          path: './out'
+          path: ./out
       - name: deploy
         id: deployment
         uses: actions/deploy-pages@v4
